@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>El antes y el despues de una etiqueta</title>
+        <style>
+            p::before{
+                content: "Jesús Ángel dice: ";
+                background-color: aqua;
+            }
+            p::after{
+                content: ".";
+                color:red;
+            }
+            em::before, em::after{
+                content: '"';
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            em{
+                font-weight: bold;
+            }
+            img{
+                width: 100%;
+                max-width: 450px;
+                height: auto;
+                display: block;
+            }
+            div#foto{
+                position: relative;
+                max-width: 450px;
+            }
+            div#foto::before{
+                content: "Vendido";
+                color: white;
+                font-size: 2rem;
+                width: 110px;
+                height: 2.1rem;
+                background-color: red;
+                position: absolute;
+                     top: 35px;
+                    left: 15px;
+                transform: rotate(-45deg);    
+            }
+            div#foto::after{
+                content: "Volvo 340 GL";
+                color: red;
+                position: absolute;
+                   right: 15px;
+                  bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Hola Jesús</p>
+        <em>Burgos, cabeza de Castilla</em>
+        <div id="foto">
+            <img src="./fotos/volvo360.jpg" alt="Volvo 340 GL">
+            
+        </div>    
+    </body>
+</html>

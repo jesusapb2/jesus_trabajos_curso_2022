@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jugar con el texto</title>
+        <style>
+           
+            mark{
+                background-color: rgb(69, 69, 50);
+            }
+            span{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p><u>Ingresar</u> un <i>párrafo</i></p>
+        <p><b>Ingreso</b> un segundo <s>párrafo</s></p>
+        <p><mark>Burgos</mark> cabeza de <strong>Castilla</strong></p>
+        <p>m<sup>2</sup></p>
+        <p>H<sub>2</sub>O</p>
+        <p>Esto es un          texto con letra <small>pequiñita</small></p>
+        <p><pre>
+            hola               hola 
+            hkdafjañ
+            fjafdjañ
+        </pre></p>
+        <p><span>Hola</span> <slot>desde</slot> Burgos</p>
+        <p>hola<br />Desde<br />Burgos</p>
+        <blockquote>
+            Ni quito ni pongo pero ayudo a mi rey
+            de Castilla
+        </blockquote>
+        <code>
+           &lt;html&gt;
+        </code>
+        <p><time>04/09/2022</time></p>
+    </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Uso del float</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #contenedor{
+                width: 50%;
+                margin: auto;
+                margin-top: 50px;
+            }
+            header{
+                width: 100%;
+                display: flex;
+            }
+            header img{
+                padding: 15px 50px 15px 50px;
+                height: 75px;
+            }
+            header nav{
+                width: 60%;
+                background-color: antiquewhite;
+            }
+            header nav ul{
+                width: 100%;
+                list-style: none;
+                line-height: 75px;
+            }
+            header nav ul li{
+                display: inline-block;
+                width: 20%;
+                border: 1px solid red;
+            }
+            header nav ul li a{
+                text-decoration: none;
+                color: red;
+                display: block;
+                text-align: center;
+            }
+            /*Selector de etiqueta*/
+            img{
+                float: right;
+                width: 50%;
+                height: auto;
+            }
+            .caja1, .caja2, .caja3{
+                width: 33%;
+                min-height: 150px;
+                border: 1px solid red;
+                box-sizing: border-box;
+                float: left;
+            }
+            .caja1{
+                animation: mCaja1 5s 1;
+            }
+            .caja2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                animation: mCaja2 5s 1;
+            }
+            .caja2 p{
+                text-align: center;
+                color: red
+            }
+            .caja3{
+                animation: mCaja3 5s 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .caja3 img{
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                object-position: top center;
+            }
+            
+            @supports(object-fit: scale-down){
+                .caja3 img{
+                    width: 100%;
+                    object-fit: scale-down;
+                    object-position: top center;
+                }
+            }
+            .resetearFloat{
+                clear: both;
+            }
+            .centrar{
+                margin-left: 0.5%;
+                margin-right: 0.5%;
+            }
+            /** ** ** ** ** ** ** ** */
+            @keyframes mCaja1 {
+                 0% {opacity:0;}
+               100% {opacity:1;
+                     float: left;}
+            }
+            @keyframes mCaja2 {
+                 0% {opacity: 0;}
+                33% {opacity: 0;}
+               100% {opacity: 1;
+                     float: left;}
+            }
+            @keyframes mCaja3 {
+                 0% {opacity: 0;}
+                66% {opacity: 0;}
+               100% {opacity: 1;
+                     float: left;}
+            }
+            /* ** Efecto acordeón  **/
+            ul.acorh,
+            ul.acorh * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+            ul.acorh {
+                margin: 10px auto;
+                padding: 0;
+                list-style: none;
+                width: 100%;
+                font-size: 18px;
+            }
+            ul.acorh li {
+                list-style: none;
+            }
+            ul.acorh li a {
+                display: block;
+                padding: 10px 10px 10px 20px;
+                background: #333;
+                color: #eee;
+                border-bottom: 1px solid #000;
+                border-top: 1px solid #666;
+                text-decoration: none;
+                box-sizing: border-box;
+            }
+            ul.acorh ul li  {
+                max-height: 0;
+
+                list-style: circle;
+
+                transition: .3s all ease-in;
+            }
+            ul.acorh li li a {
+                padding: 10px 10px 10px 40px;
+                background: #999;
+                color: #000;
+                font-size: 16px;
+                border: 0;
+                border-bottom: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            ul.acorc li li:last-child a {
+                border-bottom: 0;
+            }
+            ul.acorh li:hover ul {
+                max-height: 300px;
+                transition: .3s all ease-in;
+            }
+            ul.acorh li a:hover {
+                background: #666;
+                color: #fff;
+            }
+            footer{
+                background-color: azure;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contenedor">
+            <header>
+                <img src="./fotos/volvo360.jpg" alt="" />
+                <nav>
+                    <ul>
+                        <li><a href="#">Menú 1</a></li><li><a href="#">Menú 1</a></li><li><a href="#">Menú 1</a></li><li><a href="#">Menú 1</a></li><li><a href="#">Menú 1</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <hr />
+            <main>
+                <img  src="./fotos/volvo360.jpg" alt="Volvo 360 GL" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi perspiciatis repudiandae nobis aspernatur beatae tempora maxime, neque dolorem doloremque amet commodi. Vitae inventore, voluptatum eligendi similique ipsa cupiditate molestiae.</p>
+                <div class="caja1 resetearFloat">
+
+                </div>
+                <div class="caja2 centrar">
+                    <p>Saludos</p>
+                </div>
+                <div class="caja3">
+                    <img src="fotos/volvo360.jpg" alt="Volvo 340 GL" />
+                </div>
+            </main>
+            <footer class="resetearFloat">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </footer>
+        </div>
+    </body>
+</html>

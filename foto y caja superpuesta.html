@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>logo sobre una foto</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #contenedor{
+                width: 50%;
+                margin: 20px auto 0px auto;
+                border: 1px solid red;
+            }
+            #foto1{
+                position: relative;
+                overflow: hidden;
+            }
+            #foto1 img{
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            #foto1::before{
+                content: "♥";
+                display: block;
+                background-color: red;
+                width:  30px;
+                height: 30px;
+                position: absolute;
+                     top: 15px;
+                    left: 15px;
+                 z-index: 1000;
+                text-align: center;
+                line-height: 30px;  
+                transform: rotate(45deg);              
+            }
+            #foto1::after{
+                content: "Volvo 340 GL";
+                color: red;
+                position: absolute;
+                    bottom: 10px;
+                     right: 10px; 
+                   z-index: 1000;
+            }
+            p::before{
+                content: "Marca: ";
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="foto1">
+                <img  src="./fotos/volvo360.jpg" alt="Volvo 340 GL Blanco" tytle="Volvo 340GL" />
+            </div>
+            <p>Volvo</p>
+        </div>
+    </body>
+</html>

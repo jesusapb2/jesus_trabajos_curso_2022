@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>El float</title>
+        <style>
+            *{/* Selector universal*/
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #contenedor{ /* Selector de identificación */
+                /* ocupe el 50% del ancho y que esté centrado en pantalla */
+                width: 50%;
+                margin: 25px auto 0 auto;
+                min-height: 150px;
+                border: 3px solid green;
+            }
+            .cajas{
+                display: flex;
+            }
+            .caja{/* Selector de clases */
+                /* las cajas de la aplicación tendrán 150px de alto, y 33% de ancho de su contenedor*/
+                height: 150px;
+                width: 33%;
+                /*ponemos un borde para cada caja, así determinamos su espacio*/
+                border: 1px solid red;
+                /*Quiero poner las tres cajas en línea*/
+                /*float: left;*/
+                box-shadow: -5px -5px 10px blue;
+                display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+            }
+            .central{
+                margin-left: 0.5%;
+                margin-right: 0.5%;
+            }
+            .efectos{
+                text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+                color: white;
+                font: 1.5rem Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
+                text-align: center;/* horizontalmente centrado*/
+            }
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contenedor">
+            <div class="cajas">
+                <div class="caja">
+                    <p>Desde Burgos</p>
+                </div>
+                <div class="caja central">
+                    <p class="efectos">Hola Jesús</p>
+                </div>
+                <div class="caja">
+                    <img src="./fotos/volvo360.jpg" alt="Volvo 340 GL blanco" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

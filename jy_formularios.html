@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <title>js y formularios</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #contenedor{
+                width:40%;
+                margin: auto;
+            }
+            input, label{
+                display: block;
+            }
+            input[type="submit"], input[type="text"]{
+                width: 100%;
+            }
+        </style>
+        <script>
+            window.onload = iniciar;
+            function iniciar(){
+                document.getElementById("submit").addEventListener("click", altaUsuarios);
+                document.getElementById("borrar").addEventListener("click", borrarUsuarios);
+            }
+            function altaUsuarios(e){
+                e.preventDefault();
+                let nombre    = document.getElementById("nombre").value;
+                let apellidos = document.getElementById("apellidos").value;
+
+                document.getElementById("usuarios").innerHTML += "<p>" + nombre + " " + apellidos + "</p>";
+            }
+            function borrarUsuarios(){
+                document.getElementById("usuarios").innerHTML = "";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <form action="" method="get">
+                <label for="nombre">Inserte nombre:</label>
+                <input type="text" id="nombre" name="nombre" />
+                <label for="apellidos">Inserte apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" />
+
+                <input type="submit" id="submit" value="Enviar..." />
+            </form>
+            <div id="usuarios"></div>
+            <button id="borrar">Borrar contenido</button>
+        </div>
+    </body>
+</html>

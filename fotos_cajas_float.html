@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Uso del float</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #contenedor{
+                width: 50%;
+                margin: auto;
+                margin-top: 50px;
+            }
+            /*Selector de etiqueta*/
+            img{
+                float: right;
+                width: 50%;
+                height: auto;
+            }
+            .caja1, .caja2, .caja3{
+                width: 33%;
+                min-height: 150px;
+                border: 1px solid red;
+                box-sizing: border-box;
+                float: left;
+            }
+            .caja1{
+                animation: mCaja1 5s 1;
+            }
+            .caja2{
+                animation: mCaja2 5s 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .caja2 p{
+                text-align: center;
+                color: red
+            }
+            .caja3{
+                animation: mCaja3 5s 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .caja3 img{
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+            }
+            @supports(object-fit: cover){
+                .caja3 img{
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: top center;
+                    overflow: hidden;
+                }
+            }
+            .resetearFloat{
+                clear: both;
+            }
+            .centrar{
+                margin-left: 0.5%;
+                margin-right: 0.5%;
+            }
+            /** ** ** ** ** ** ** ** */
+            @keyframes mCaja1 {
+                 0% {opacity:0;}
+               100% {opacity:1;
+                     float: left;}
+            }
+            @keyframes mCaja2 {
+                 0% {opacity: 0;}
+                33% {opacity: 0;}
+               100% {opacity: 1;
+                     float: left;}
+            }
+            @keyframes mCaja3 {
+                 0% {opacity: 0;}
+                66% {opacity: 0;}
+               100% {opacity: 1;
+                     float: left;}
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contenedor">
+            <img  src="./fotos/volvo360.jpg" alt="Volvo 360 GL" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi perspiciatis repudiandae nobis aspernatur beatae tempora maxime, neque dolorem doloremque amet commodi. Vitae inventore, voluptatum eligendi similique ipsa cupiditate molestiae.</p>
+            <div class="caja1 resetearFloat">
+
+            </div>
+            <div class="caja2 centrar">
+                <p>Saludos</p>
+            </div>
+            <div class="caja3">
+                <img src="./fotos/volvo360.jpg" alt="Volvo 340 GL" />
+            </div>
+        </div>
+    </body>
+</html>
